@@ -1,0 +1,19 @@
+font-family = Inconsolata Nerd Font Mono
+font-size = 12
+
+# the last theme is the one used
+theme = duckbones
+theme = Hurtado
+theme = Mathias
+theme = ayu
+theme = niji
+
+# turn off title bar
+window-decoration = false
+
+# clip trailing whitespace when copying to clipboard
+clipboard-trim-trailing-spaces = true
+
+copy-on-select = clipboard
+clipboard-read = allow
+clipboard-write = allow

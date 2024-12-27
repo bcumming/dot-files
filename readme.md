@@ -6,7 +6,7 @@
 export TERM=xterm-256color
 
 # place all configuration and state in a uarch-specific path
-xdgbase==$HOME/.local/$(uname -m)/
+xdgbase=$HOME/.local/$(uname -m)
 export XDG_DATA_HOME=$xdgbase/share
 export XDG_CONFIG_HOME=$xdgbase/config
 export XDG_STATE_HOME=$xdgbase/state
@@ -44,11 +44,16 @@ curl -s https://ohmyposh.dev/install.sh | bash -s -- -d $LOCAL_PATH
 
 # only initialise oh-my-posh if it has been installed
 if command -v oh-my-posh >/dev/null 2>&1; then
-    eval "$(oh-my-posh init $(oh-my-posh get shell)) --config $HOME/dot-files/oh-my-posh/theme.omp.json)"
+    eval "$(oh-my-posh init $(oh-my-posh get shell) --config $HOME/dot-files/oh-my-posh/theme.omp.json)"
 fi
 ```
 
 ## neovim
+
+Link the nvim configuration to the location neovim expects to find it
+```
+ln -s $XDG_CONFIG_HOME $HOME/dot-files
+```
 
 ### LSP
 
