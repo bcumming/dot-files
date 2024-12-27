@@ -17,3 +17,5 @@ clipboard-trim-trailing-spaces = true
 copy-on-select = clipboard
 clipboard-read = allow
 clipboard-write = allow
+
+background = 18191a
