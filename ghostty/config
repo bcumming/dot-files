@@ -1,12 +1,10 @@
-font-family = Inconsolata Nerd Font Mono
+font-family = Source Code Pro
 font-size = 12
 
 # the last theme is the one used
-theme = duckbones
-theme = Hurtado
-theme = Mathias
 theme = ayu
 theme = niji
+background = 03030d
 
 # turn off title bar
 window-decoration = false
@@ -18,4 +16,3 @@ copy-on-select = clipboard
 clipboard-read = allow
 clipboard-write = allow
 
-background = 18191a

@@ -1,3 +1,13 @@
+# dot files
+
+The configuration for each application is in its own path.
+
+```
+git clone git@github.com:bcumming/dot-files.git $HOME/dot-files
+ln -s $HOME/dot-files/nvim $XDG_CONFIG_HOME/nvim
+ln -s $HOME/dot-files/ghostty $XDG_CONFIG_HOME/ghostty
+```
+
 ## bashrc / zshrc
 
 ```bash
