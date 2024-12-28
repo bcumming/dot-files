@@ -13,7 +13,7 @@
         {
           "foreground": "#1bf7f7",
           "style": "plain",
-          "template": "{{ .UserName }}@{{ .HostName }}",
+          "template": "<b>{{ .UserName }}@{{ .HostName }}</b>",
           "type": "session"
         },
         {
@@ -24,7 +24,7 @@
             "mapped_locations_enabled": false
           },
           "style": "plain",
-          "template": " {{ .Path }} ",
+          "template": " <b>{{ .Path }}</b> ",
           "type": "path"
         },
         {
