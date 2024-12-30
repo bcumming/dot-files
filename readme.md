@@ -25,6 +25,7 @@ export LOCAL_PATH=$xdgbase/bin
 export PATH=$LOCAL_PATH:$PATH
 
 export EDITOR=vim
+export GIT_PAGER=cat
 
 # expand env variables automatically
 shopt -s direxpand
