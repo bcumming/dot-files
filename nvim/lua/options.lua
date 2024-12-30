@@ -1,7 +1,6 @@
 local cmd = vim.cmd
 local opt = vim.opt
-local g = vim.g
-local s = vim.s
+local wo = vim.wo
 
 opt.clipboard = "unnamedplus"                -- allow neovim to access the system clipboard
 vim.opt.fileencoding = "utf-8"               -- the encoding written to a file
@@ -34,6 +33,8 @@ opt.listchars = {
     precedes = "«",
     nbsp = "×"
 }
+
+wo.number = true
 
 -- persistent undo
 local undodir = vim.fn.stdpath("data") .. "/undo"

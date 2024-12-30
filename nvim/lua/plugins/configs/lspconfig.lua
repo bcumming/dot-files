@@ -5,6 +5,8 @@ require("mason-lspconfig").setup {
     ensure_installed = {"lua_ls", "clangd", "pyright"}
 }
 
+require('neodev').setup({})
+
 local lspconfig = require('lspconfig')
 lspconfig.clangd.setup{}
 lspconfig.lua_ls.setup{}

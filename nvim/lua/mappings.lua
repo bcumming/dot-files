@@ -2,6 +2,9 @@
 
 local map = vim.keymap.set
 
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 vim.keymap.set('n', '<left>', '<cmd>tabprev<CR>')
 vim.keymap.set('n', '<right>', '<cmd>tabnext<CR>')
 vim.keymap.set('n', '<up>', '<cmd>tabm -1<CR>')
@@ -11,6 +14,12 @@ vim.keymap.set('n', '<leader><down>', '<cmd>resize -5<CR>')
 vim.keymap.set('n', '<leader><up>', '<cmd>resize +5<CR>')
 vim.keymap.set('n', '<leader><left>', '<cmd>vertical resize +5<CR>')
 vim.keymap.set('n', '<leader><right>', '<cmd>vertical resize -5<CR>')
+
+-- toggle line numbers
+vim.keymap.set('n', '<leader>N', ':set nu!<CR>', {desc = "reload nvim configuration"})
+
+-- clear hilights
+vim.keymap.set('n', '<leader><leader>', ':nohl<CR>')
 
 -- reload configuration
 vim.keymap.set('n', '<leader>r', ':source $MYVIMRC<CR>', {desc = "reload nvim configuration"})
@@ -25,6 +34,6 @@ map("n", "<leader>fo", builtin.oldfiles, { desc = "Open Telescope to list recent
 map("n", "<leader>cm", builtin.git_commits, { desc = "Open Telescope to list git commits" })
 
 -- NvimTree
-map("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree sidebar" })    -- open/close
-map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { desc = "Refresh NvimTree" })         -- refresh
-map("n", "<leader>nf", ":NvimTreeFindFile<CR>", { desc = "Search file in NvimTree" }) -- search file
+map("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree sidebar" })
+map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { desc = "Refresh NvimTree" })
+map("n", "<leader>nf", ":NvimTreeFindFile<CR>", { desc = "Search file in NvimTree" })

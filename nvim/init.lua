@@ -20,9 +20,6 @@ end
 -- enable 24-bit RGB colors
 vim.opt.termguicolors = true
 
--- Disable annoying deprecated message
-vim.deprecate = function() end
-
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -36,14 +33,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-for _, source in ipairs({
-	"plugins",
-	"options",
-	"mappings",
-}) do
-	local ok, fault = pcall(require, source)
-	if not ok then
-		vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault)
-	end
-end
-
+-- order matters: key bindings (mappings) and options refer to plugins, so first load the plugins
+require("plugins")
+require("mappings")
+require("options")
