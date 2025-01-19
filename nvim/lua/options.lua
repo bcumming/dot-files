@@ -2,9 +2,9 @@ local cmd = vim.cmd
 local opt = vim.opt
 local wo = vim.wo
 
-opt.clipboard = "unnamedplus"                -- allow neovim to access the system clipboard
-vim.opt.fileencoding = "utf-8"               -- the encoding written to a file
-opt.encoding = "utf-8"                       -- the encoding
+opt.clipboard = "unnamedplus" -- allow neovim to access the system clipboard
+opt.fileencoding = "utf-8"    -- the encoding written to a file
+opt.encoding = "utf-8"        -- the encoding
 opt.matchpairs = { "(:)", "{:}", "[:]", "<:>" }
 opt.syntax = "enable"
 

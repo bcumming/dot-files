@@ -1,3 +1,12 @@
+-- bootstrap lazy
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system(
+        { "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", -- latest stable release
+            lazypath })
+end
+vim.opt.rtp:prepend(lazypath)
+
 local builtin_plugins = {
     "nvim-lua/plenary.nvim",
     -- tree file explorer
@@ -82,7 +91,6 @@ local builtin_plugins = {
                 opts = { history = true, updateevents = "TextChanged,TextChangedI" },
                 config = function(_, opts)
                     require("luasnip").config.set_config(opts)
-                    --require("plugins.configs.luasnip")
                 end,
             },
             -- autopairing of (){}[] etc
@@ -113,6 +121,42 @@ local builtin_plugins = {
             require("plugins.configs.conform")
         end
     },
+    -- AI nonsense
+    {
+        "yetone/avante.nvim",
+        event = "VeryLazy",
+        lazy = false,
+        version = false,
+        opts = {
+        },
+        -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+        build = "make",
+        dependencies = {
+            "stevearc/dressing.nvim",
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            --- The below dependencies are optional,
+            "hrsh7th/nvim-cmp",            -- autocompletion for avante commands and mentions
+            "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+            -- "zbirenbaum/copilot.lua",      -- for providers='copilot'
+            {
+                -- Make sure to set this up properly if you have lazy=true
+                'MeanderingProgrammer/render-markdown.nvim',
+                opts = {
+                    file_types = { "markdown", "Avante" },
+                },
+                ft = { "markdown", "Avante" },
+            },
+        },
+    },
+    -- Something silly
+    {
+        "giusgad/pets.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
+        opts = function()
+            require("plugins.configs.pets")
+        end,
+    }
 }
 
 require("lazy").setup({
