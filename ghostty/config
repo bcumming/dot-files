@@ -10,8 +10,8 @@ font-size = 11
 #
 
 # the last theme is the one used
-theme = ayu
-theme = niji
+#theme = ayu
+#theme = niji
 background = 03030d
 
 # turn off title bar
