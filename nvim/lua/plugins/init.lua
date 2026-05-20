@@ -26,6 +26,7 @@ local builtin_plugins = {
         "nvim-treesitter/nvim-treesitter",
         version = false,
         evevent = { "BufReadPost", "BufNewFile", "BufWritePost" },
+        branch = "main",
         cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
         build = ":TSUpdate",
         opts = function()
@@ -110,9 +111,15 @@ local builtin_plugins = {
             require("plugins.configs.cmp")
         end,
     },
-    -- for editing neovim config files
+    -- lua LSP extras (replaces deprecated neodev.nvim)
     {
-        "folke/neodev.nvim",
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {
+            library = {
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
     },
     -- for formatting
     {
