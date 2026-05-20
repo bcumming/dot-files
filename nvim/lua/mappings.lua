@@ -33,6 +33,9 @@ map("n", "<leader>fh", builtin.help_tags, { desc = "Open Telescope to show help"
 map("n", "<leader>fo", builtin.oldfiles, { desc = "Open Telescope to list recent files" })
 map("n", "<leader>cm", builtin.git_commits, { desc = "Open Telescope to list git commits" })
 
+-- LSP
+map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic float" })
+
 -- NvimTree
 map("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree sidebar" })
 map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { desc = "Refresh NvimTree" })
